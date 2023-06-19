@@ -63,13 +63,32 @@ console.log(addBook(books, newBook))
 function deleteLastIndexBook(books){
     return books.pop();
 }
-console.log(deleteLastIndexBook(books))
+//console.log(deleteLastIndexBook(books))
 
 
 function deleteBookByIndex(indice){
     books.splice(indice,1)
-    return books //eliminar elemento con base al indice.
+    console.log("Deleted" + indice)
+     //eliminar elemento con base al indice.
                                   // El primer parametro es el indice donde empieza a eliminar.
                                   // El segundo parametro es la cantidad de elementos a borrar.
 }
-console.log(deleteBookByIndex(1))
+//console.log(deleteBookByIndex(1))
+
+
+//loop que imprima los nombres de los libros en orden de la coleccion.
+
+for(libro of books){
+    console.log(libro.titulo)     
+}
+
+ // loop borre los libros en order reverso
+
+ for(let index = books.length ; index > 0 ; index--){
+    console.log(index);
+    deleteBookByIndex(index-1)
+ }
+
+
+
+
