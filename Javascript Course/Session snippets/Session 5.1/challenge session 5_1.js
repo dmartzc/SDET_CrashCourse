@@ -37,7 +37,9 @@ function patada(resultadoDados) {
    * dados menor o igual a 2 = 20 puntos de daño
    */
 
-  puntosDeDaño = resultadoDados >= 5 ? 60 : resultadoDados == (3 || 4) ? 40 : 20
+  puntosDeDaño = resultadoDados >= 5 ? 60
+                 : resultadoDados == 3 || resultadoDados ==  4 ? 40 
+                 : 20
 
   return puntosDeDaño;
 }
@@ -64,10 +66,8 @@ for (let turno = 0; turno < 3; turno++) {
   const dado2 = tirarDado()
   const dañoGolpe = golpe(dado1)
   const dañoPatada = patada(dado2)
-  const dañoTurno = []
-  dañoTurno.push(dañoGolpe + dañoPatada)
-  for(let daño of dañoTurno) dañoTotal += daño
- 
+  const dañoTurno = (dañoGolpe + dañoPatada)
+  dañoTotal += dañoTurno
 
   console.log(`
   Dado1: ${dado1},
