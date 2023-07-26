@@ -15,9 +15,9 @@ agregarItem("Sandia", 6, 0.8);
 
 
 function verificarInventario(){
-    let header = "Inventario: \n    Fruta      Cantidad        Precio \n"
+    let header = "Inventario: \n   Fruta \t      Cantidad       Precio \n"
     for (const fruta of inventario) {
-        header = header + '\t' + fruta.nombre + '\t\t' + fruta.cantidad +  '\t\t\t\t$'  + fruta.precio + '\n'                     
+        header = `${header}   ${fruta.nombre} \t       ${fruta.cantidad}  \t       ${fruta.precio}\n`
     }
     return console.log(header)
 }
@@ -48,5 +48,5 @@ function eliminarItem(frutaNombre){
 } 
 
 agregarItem("Durazno", 3, .4);
-eliminarItem("")
+eliminarItem("Naranja")
 verificarInventario()
