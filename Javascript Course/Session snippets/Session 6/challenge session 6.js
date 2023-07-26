@@ -15,9 +15,12 @@ agregarItem("Sandia", 6, 0.8);
 
 
 function verificarInventario(){
-    let header = "Inventario: \n   Fruta \t      Cantidad       Precio \n"
+    let header = `Inventario: 
+         Fruta          Cantidad       Precio
+        `
     for (const fruta of inventario) {
-        header = `${header}   ${fruta.nombre} \t       ${fruta.cantidad}  \t       ${fruta.precio}\n`
+        header = `${header}${fruta.nombre}  \t ${fruta.cantidad}      \t  ${fruta.precio}
+        `
     }
     return console.log(header)
 }
